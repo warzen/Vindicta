@@ -127,6 +127,12 @@ location_bp_cargo_medium =
 	[
 		["Land_PoliceStation_01_F"],
 		[[2.60131,61.8427,1.29491], [7.02257,323.042,0.777817], [4.66018,296.356,0.788269], [7.448,319.591,4.42163], [8.1648,252.885,4.26756]]
+	],
+	//RHSPKL
+	[
+		["Land_blud_hut6"],
+		//[[0,0,3], [3.6,15,3]]
+		[[1.30745,140.394,3.52625,0],[2.78827,300.346,3.52625,0],[4.64172,189.959,1.33185,0]]
 	]
 ];
 
@@ -161,7 +167,17 @@ location_bt_police =
 
 	//Livonia
 	"Land_PoliceStation_01_F",
-	"Land_House_2B04_F"
+	"Land_House_2B04_F",
+
+	//RHSPKL
+	//"Land_blud_hut3",
+	//"Land_blud_hut7",
+	"Land_blud_hut6",
+
+	//Sahrani
+	"Land_Dum_mesto2",
+	"Land_Dum_olez_istan1",
+	"Land_Sara_Domek_sedy"
 ];
 
 location_decorations_police =
@@ -315,4 +331,35 @@ _arrayExport
 /*
 //Code to get class names of all selected eden objects
 (get3DENSelected "object") apply {typeof _x}
+*/
+
+/* code to get the coordinates in cylindrical form
+based on selection the house and ammo box in 3DEN
+
+objects = get3DENSelected "object"; 
+_b = objects select {_x isKindOf "House"} select 0; 
+_o = objects select {_x isKindOf "ReammoBox_F"} select 0; 
+   
+_bPos = getPosATL _b; 
+_oPos = getPosATL _o; 
+ 
+_dirRel = (_bPos getDir _oPos) - (direction _b); 
+_zRel = _oPos#2 - _bPos#2; 
+_distRel = _bPos distance2D _oPos; 
+ 
+_objDir = (direction _o) - (direction _b); 
+ 
+[_distRel, _dirRel, _zRel, _objDir]
+*/
+
+/* code to place a black on every house from a specific type
+used to test possible building classname for police station
+
+_i=0;
+{
+createMarker ["marker"+str(_i), _x];
+"marker"+str(_i) setMarkerType "hd_dot";
+"marker"+str(_i) setMarkerColor "ColorBlack";
+_i=_i+1;
+} forEach nearestObjects [(getpos player), ["Land_blud_hut3"], 25000];
 */
