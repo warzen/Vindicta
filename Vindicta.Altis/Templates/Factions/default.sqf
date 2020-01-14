@@ -1,5 +1,5 @@
 /*
-NATO templates for ARMA III
+NATO templates for ARMA IIII
 */
 
 _array = [];
