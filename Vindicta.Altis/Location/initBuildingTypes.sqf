@@ -214,6 +214,11 @@ location_decorations_police =
 	[
 		["Land_u_House_Small_01_V1_F","Land_i_House_Small_01_V3_F","Land_i_House_Small_01_V1_F","Land_i_House_Small_01_V2_F"],
 		[[[-1.12695,-4.81641,1.56931],[[0.012478,0.999922,0],[0,0,1]]],[[1.53125,5.28711,1.06545],[[-0.01174,-0.999931,0],[0,0,1]]]]
+	],
+	// RHSPKL
+	[
+		["Land_blud_hut6"],
+		[[[4.35303,3.89502,2.12814],[[-1,0,0],[0,0,1]]],[[-3.9939,3.84729,2.12864],[[1,0,0],[0,0,1]]],[[-1.37402,5.09265,2.1285],[[0,-1,0],[0,0,1]]]]
 	]
 ];
 
@@ -352,7 +357,7 @@ _objDir = (direction _o) - (direction _b);
 [_distRel, _dirRel, _zRel, _objDir]
 */
 
-/* code to place a black on every house from a specific type
+/* code to place a black dot on every house from a specific type
 used to test possible building classname for police station
 
 _i=0;
